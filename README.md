@@ -1,7 +1,6 @@
 # CB_Data_Visualization
 
-[富投网]((http://www.richvest.com/index.php?m=cb&amp;a=cb_all)
-)
+[富投网](http://www.richvest.com/index.php?m=cb&amp;a=cb_all)
 
 
 
