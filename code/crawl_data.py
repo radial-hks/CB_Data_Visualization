@@ -35,23 +35,23 @@ class spiders():
                 x,y,z = 0,0,0
                 # 跟换一种思路来讲就是  -->  如果 td 之下存在子孙节点,直接使用子孙节点;否则使用自身节点 
                 #  x 
-                if  len(i.xpath("./td[8]/font/text()")) == 0:
-                    x = i.xpath("./td[8]/text()")[0]
-                else :
-                    x = i.xpath("./td[8]/font/text()")[0]
-                # y 
                 if  len(i.xpath("./td[9]/font/text()")) == 0:
-                    y = i.xpath("./td[9]/text()")[0]
+                    x = i.xpath("./td[9]/text()")[0]
                 else :
-                    y = i.xpath("./td[9]/font/text()")[0]
+                    x = i.xpath("./td[9]/font/text()")[0]
+                # y 
+                if  len(i.xpath("./td[10]/font/text()")) == 0:
+                    y = i.xpath("./td[10]/text()")[0]
+                else :
+                    y = i.xpath("./td[10]/font/text()")[0]
                 #  z
-                if len(i.xpath("./td[11]/font/text()")) == 0:
-                    z = i.xpath("./td[11]/text()")[0]
+                if len(i.xpath("./td[12]/font/text()")) == 0:
+                    z = i.xpath("./td[12]/text()")[0]
                 else:
-                    z = i.xpath("./td[11]/font/text()")[0] 
+                    z = i.xpath("./td[12]/font/text()")[0] 
                 
                 """ 先判断时候有子孙节点 """
-                med = [x,y,z]
+                
                 data = [
                     i.xpath("./td[1]//text()")[0],
                     i.xpath("./td[2]//text()")[0],
@@ -60,15 +60,14 @@ class spiders():
                     i.xpath("./td[5]//text()")[0],
                     i.xpath("./td[6]//text()")[0],
                     i.xpath("./td[7]//text()")[0],
-                    #  8,9 11 需要及时调整及判断
-                    # i.xpath("./td[8]//text()")[0],
+                    #  9.10.12 需要及时调整及判断
+                    i.xpath("./td[8]//text()")[0],
                     # i.xpath("./td[9]//text()")[0],
-                    med[0],
-                    med[1],
-                    i.xpath("./td[10]//text()")[0],
-                    # i.xpath("./td[11]//text()")[0],
-                    med[2],
-                    i.xpath("./td[12]//text()")[0],
+                    # i.xpath("./td[10]//text()")[0],
+                    x,y,
+                    i.xpath("./td[11]//text()")[0],
+                    z,
+                    # i.xpath("./td[12]//text()")[0],
                     i.xpath("./td[13]//text()")[0],
                     i.xpath("./td[14]//text()")[0],
                     i.xpath("./td[15]//text()")[0],
@@ -102,9 +101,6 @@ class spiders():
                     i.xpath("./td[43]//text()")[0],
                     i.xpath("./td[44]//text()")[0],
                     i.xpath("./td[45]//text()")[0]]
-                # data.insert(8,x)
-                # data.insert(9,x)
-                # data.insert(11,x)
                 
                 data_pool.append(data)
             return  data_pool
@@ -120,8 +116,8 @@ class spiders():
         "盘中套","股价","涨跌","转债成交额","转债换手率","转股价格","P/B","股价/转股价","转股溢价率",
         "距离转股日","剩余年限","回售年限","余额/市值","余额/股本","转债余额","税前收益率","税后收益率",
         "加权收益率","税前回售收益","税后回售收益","回售价值","纯债价值","期权价值","内在价值","价值溢价",
-        "历史波动","隐含波动","预测波动","弹性","涨修正弹","跌修正弹","信用","折现率","热门度","转债名称"]
-        data =  pd.DataFrame(pool_data,columns = head)
+        "历史波动","隐含波动","预测波动","弹性","涨修正弹","跌修正弹","信用","折现率","热门度","转债名称",'测试']
+        data =  pd.DataFrame(pool_data)
         return  data
 
 #%%
@@ -131,5 +127,30 @@ data = spider.parse_html()
 
 #%%
 data_clean = spider.data_clean(data)
+
+#%%
+head = [
+        "序号","转债名称","转债代码","股票日期","股票名称","股票代码","所属行业","转债价格","涨跌",
+        "盘中套利","股价","涨跌","转债成交额","转债换手率","转股价格","P/B","股价/转股价","转股溢价率",
+        "距离转股日","剩余年限","回售年限","余额/市值","余额/股本","转债余额","税前收益率","税后收益率",
+        "加权收益率","税前回售收益","税后回售收益","回售价值","纯债价值","期权价值","内在价值","价值溢价",
+        "历史波动","隐含波动","预测波动","弹性","涨修正弹","跌修正弹","信用","折现率","热门度","转债名称"]
+print(len(head))
+
+#%% 
+import numpy as np
+
+head = [
+        "序号","转债名称","转债代码","股票日期","股票名称","股票代码","所属行业","转债价格","涨跌",
+        "盘中套","股价","涨跌","转债成交额","转债换手率","转股价格","P/B","股价/转股价","转股价格","转股溢价率",
+        "距离转股日","剩余年限","回售年限","余额/市值","余额/股本","转债余额","税前收益率","税后收益率",
+        "加权收益率","税前回售收益","税后回售收益","回售价值","纯债价值","期权价值","内在价值","价值溢价",
+        "历史波动","隐含波动","预测波动","弹性","涨修正弹","跌修正弹","信用","折现率","热门度","转债名称"]
+
+data_c  = pd.DataFrame(np.array(data),columns = head)
+#  删除序号
+data_c.drop(["序号","转债名称"],axis = 1,inplace = True)
+
+    
 
 #%%
