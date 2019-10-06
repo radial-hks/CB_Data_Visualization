@@ -7,6 +7,7 @@
 ![行情全表](https://i.loli.net/2019/10/05/Gw2O61mvfnlpryW.png)
 
 
+
 ## 一、数据收集
 
 *说实话,真的很想吐槽这个表格的前端,什么破命名规则。*
@@ -35,6 +36,21 @@
 
 ## 三、数据可视化
 
+*此阶段将会是最挑战及趣味性的阶段,可视化,来啦*
 
+
+
+[Matplotlib : 绘制图形（入门）](https://matplotlib.org/gallery/index.html)
+
+![](https://matplotlib.org/_images/sphx_glr_csd_demo_001.png)
+
+[Seaborn : 绘制更加漂亮的图形 ](http://seaborn.pydata.org/)
+
+![](http://seaborn.pydata.org/_images/introduction_29_0.png)
+
+[Bokeh : 绘制可交互的图形 ](https://bokeh.pydata.org/en/latest/)
+
+
+![](https://nbviewer.jupyter.org/github/bokeh/bokeh-notebooks/blob/master/images/bokeh-header.png)
 
 
