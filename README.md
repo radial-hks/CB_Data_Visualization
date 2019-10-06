@@ -17,6 +17,7 @@
 
 [lxml](https://github.com/lxml/lxml)
 
+
 ![数据收集](https://i.loli.net/2019/10/05/gXAO6lnK3QcIaxb.png)
 
 
@@ -24,7 +25,11 @@
 
 *数据简单的整理、清洗及存储*
 
-> pandas:
+
+
+[Pandas快捷查找](https://pandas.pydata.org/pandas-docs/stable/genindex.html)
+
+![本地化存储预览](https://i.loli.net/2019/10/06/dxusvfkUliX9RtV.png)
 
 
 
