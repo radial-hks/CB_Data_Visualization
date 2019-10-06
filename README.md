@@ -14,9 +14,9 @@
 
 但是使用`requests`与`lxml`将表格的数据提取出来了,虽然历经坎坷,但是...
 
-[requests](https://github.com/psf/requests)  
+[requests : 数据请求 ](https://github.com/psf/requests)  
 
-[lxml](https://github.com/lxml/lxml)
+[lxml : HTMl文档解析 ](https://github.com/lxml/lxml)
 
 
 ![数据收集](https://i.loli.net/2019/10/05/gXAO6lnK3QcIaxb.png)
@@ -28,7 +28,7 @@
 
 
 
-[Pandas快捷查找](https://pandas.pydata.org/pandas-docs/stable/genindex.html)
+[Pandas : 超级无敌好用的数据处理库 ](https://pandas.pydata.org/pandas-docs/stable/genindex.html)
 
 ![本地化存储预览](https://i.loli.net/2019/10/06/dxusvfkUliX9RtV.png)
 
