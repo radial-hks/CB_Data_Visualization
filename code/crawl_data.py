@@ -1,10 +1,8 @@
-
-#%%
 import requests
-import re
 import pandas as pd
 import numpy as np
 from lxml import etree
+import setting
 
 
 class spiders():
@@ -13,8 +11,6 @@ class spiders():
         # 使用默认地址为富投网行情全表
         self.url = r"http://www.richvest.com/index.php?m=cb&a=cb_all"
         self.headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'}
-        # 数据处理存储路径(默认为当前路径)
-        self.path = r"./"
         
     def get_html(self):
         ''' 模拟请求数据 '''
@@ -175,7 +171,7 @@ class spiders():
                 data[i] = med
         return data
 
-    def storage_data(self,data,path = "./"):
+    def storage_data(self,data,path = setting.PATH):
         """
         数据预览及存储
         - 默认存储
@@ -188,7 +184,6 @@ class spiders():
             return "F"
 
 
-
 # 初始化类
 spider = spiders()
 
@@ -197,5 +192,3 @@ data = spider.parse_html()
 # 数据简单清洗h及存储
 data_clean = spider.clean_data(data)
 spider.storage_data(data_clean)
-
-
