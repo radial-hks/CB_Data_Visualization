@@ -102,3 +102,29 @@ f3_ax5.set_title('gs[-1, -2]')
 
 #### 2、散点图绘制详解
 
+[简单实例,详细使用参照文档](http://seaborn.pydata.org/generated/seaborn.scatterplot.html?highlight=scatterplot#seaborn.scatterplot)
+
+```python
+cmap = sns.cubehelix_palette(dark=.3, light=.8, as_cmap=True)
+ax = sns.scatterplot(x="转债价格", y="股价",
+                     hue="转股溢价率",
+                     size="信用",
+                     palette=cmap, 
+                     sizes=(10, 200),
+                     data=data_sc,
+                     legend=False)
+# 参数: X，Y轴、色度及斑点大小对应数据 coloums_name 
+# 参数: data(完整的数据)
+# 参数: legend --> 是否展示图例
+
+```
+大致出现的效果:
+
+![](http://seaborn.pydata.org/_images/seaborn-scatterplot-7.png)
+
+
+还有更多的功能等待发现～～～
+
+补上，**颜色与风格**可是`Seaborn`的亮点之一哦,[详情查看`cubehelix_palette`或`color_palette`](http://seaborn.pydata.org/generated/seaborn.cubehelix_palette.html?highlight=cubehelix_palette),悄悄地放一张图
+
+![](http://seaborn.pydata.org/_images/seaborn-cubehelix_palette-5.png)
