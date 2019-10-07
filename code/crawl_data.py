@@ -189,9 +189,10 @@ class spiders():
 
 
 
+# 初始化类
 spider = spiders()
 
-#  获取数据并解析 
+# 获取数据并解析 
 data = spider.parse_html()
 # 数据简单清洗h及存储
 data_clean = spider.clean_data(data)
