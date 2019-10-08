@@ -128,3 +128,5 @@ ax = sns.scatterplot(x="转债价格", y="股价",
 补上，**颜色与风格**可是`Seaborn`的亮点之一哦,[详情查看`cubehelix_palette`或`color_palette`](http://seaborn.pydata.org/generated/seaborn.cubehelix_palette.html?highlight=cubehelix_palette),悄悄地放一张图
 
 ![](http://seaborn.pydata.org/_images/seaborn-cubehelix_palette-5.png)
+
+
