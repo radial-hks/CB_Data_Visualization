@@ -32,6 +32,9 @@
 
 ![本地化存储预览](https://i.loli.net/2019/10/06/dxusvfkUliX9RtV.png)
 
+### 问题及解决方法
+
+####  1、
 
 
 ## 三、数据可视化
@@ -130,3 +133,4 @@ ax = sns.scatterplot(x="转债价格", y="股价",
 ![](http://seaborn.pydata.org/_images/seaborn-cubehelix_palette-5.png)
 
 
+####  3、交互性超强的Bokeh
