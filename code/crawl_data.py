@@ -5,7 +5,7 @@ from lxml import etree
 import setting
 
 
-class spiders():
+class Spiders():
 
     def __init__(self):
         # 使用默认地址为富投网行情全表
@@ -123,13 +123,10 @@ class spiders():
 
     def clean_data(self,data_):
         ''' 
-        
         简单的数据清洗 
-        
-        
         '''
         head = ["序号","转债名称","转债代码","股票日期","股票名称","股票代码","所属行业","转债价格","涨跌_1",
-        "盘中套","股价","涨跌_2","转债成交额","转债换手率","转股价格","P/B","股价/转股价","转股价格","转股溢价率",
+        "盘中套","股价","涨跌_2","转债成交额","转债换手率","转股价格","P/B","股价/转股价","转股价值","转股溢价率",
         "距离转股日","剩余年限","回售年限","余额/市值","余额/股本","转债余额","税前收益率","税后收益率",
         "加权收益率","税前回售收益","税后回售收益","回售价值","纯债价值","期权价值","内在价值","价值溢价",
         "历史波动","隐含波动","预测波动","弹性","涨修正弹","跌修正弹","信用","折现率","热门度","转债名称_"]
@@ -171,7 +168,7 @@ class spiders():
                 data[i] = med
         return data
 
-    def storage_data(self,data,path = setting.PATH):
+    def storage_data(self,data,path = setting.DATA_PATH):
         """
         数据预览及存储
         - 默认存储
@@ -185,10 +182,10 @@ class spiders():
 
 
 # 初始化类
-spider = spiders()
+spider = Spiders()
 
 # 获取数据并解析 
 data = spider.parse_html()
-# 数据简单清洗h及存储
+# 数据简单清洗及存储
 data_clean = spider.clean_data(data)
 spider.storage_data(data_clean)
