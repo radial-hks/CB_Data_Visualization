@@ -65,5 +65,5 @@ class Spiders():
 
 
 # 初始化类
-spider = Spiders()
-spider.crawl_storage()
+#spider = Spiders()
+# spider.crawl_storage()
