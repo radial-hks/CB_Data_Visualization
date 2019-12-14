@@ -1,6 +1,7 @@
 import crawl_data
 import os
 import setting
+import bokeh
 import pandas as pd
 from bokeh.plotting import figure 
 from bokeh.io import show
@@ -9,16 +10,9 @@ from bokeh.layouts import gridplot
 from bokeh.models import LinearColorMapper, ColorBar
 from bokeh.transform import factor_cmap
 from bokeh.palettes import Viridis256
-from bokeh.models.annotations import Span,BoxAnnotation
+from bokeh.models.annotations import Span
+from bokeh.models.annotations import BoxAnnotation
 
-
-
-
-""" 数据收集及存储 """
-
-# 初始化类
-spider = crawl_data.Spiders()
-spider.crawl_storage()
 
 
 
@@ -54,7 +48,7 @@ def to_days(x):
     """ 回售年限 """
     x = str(x)
     if "回售中" in x:
-        return  float(0)
+        return  float(-10)
     elif "无权" in x:
         return float(6)
     else:
@@ -99,7 +93,6 @@ def percent_(x):
 # 截取数据
 df =  data[old_columns]
 
-
 # 数据转化
 df.loc[:,'转债名称'] = df['转债名称'].apply(lambda x:x[:2])
 df.loc[:,'转股溢价率'] = df['转股溢价率'].apply(percent_)
@@ -110,16 +103,15 @@ df.loc[:,'信用'] = df['信用'].apply(credit)
 
 df.columns = new_columns
 
-
 """ 数据展示 """
 # 传入DataFrame数据
 source = ColumnDataSource(df)
 
 # 图形配置文件
-options = dict(plot_width=600, plot_height=400,x_axis_label="回售年限",y_axis_label= "税前回售收益率",
+options = dict(plot_width=1200, plot_height=800,
+               x_axis_label="回售年限(天)",y_axis_label= "税前回售收益率(%)",
                tools="pan,wheel_zoom,box_zoom,box_select,reset")
 TOOLTIPS = [
-    # ("index", "@index"),
     ("转债名称", "@bond_name"),
     ('转股溢价率(%)','@to_stock_premium_rate'),
     ("税前收益率(%)", '@income_before_taxes_rate'),
@@ -132,27 +124,14 @@ TOOLTIPS = [
 color_mapper = LinearColorMapper(palette=Viridis256, low=df["credit"].min(), high=df["credit"].max())
 color_bar = ColorBar(color_mapper=color_mapper, label_standoff=12, location=(0,0), title='Weight')
 
-# 转债价格与股价
-p1 = figure(title="转债价格-转股溢价率",tooltips=TOOLTIPS,**options)
-p1.circle("bond_price", 'to_stock_premium_rate', color={'field': 'credit', 'transform': color_mapper}, size=10, alpha=0.6,source=source)
-p1.add_layout(color_bar, 'right')
-
-# 添加参线:https://nbviewer.jupyter.org/github/gafeng/bokeh-notebooks/blob/master/tutorial/03%20-%20Adding%20Annotations.ipynb
-upper = Span(location=100, dimension='height', line_color='green', line_width=1)
-p1.add_layout(upper)
-
-# 转债价格与转股价格
-p2 = figure(title="转债价格-到期收益率",x_range=p1.x_range,tooltips=TOOLTIPS,**options)
-p2.circle("bond_price", 'income_before_taxes_rate', color={'field': 'credit', 'transform': color_mapper}, size=10, alpha=0.6,source=source)
-p2.add_layout(color_bar, 'right')
-
-# 转股价值与转股溢价率
 p3 = figure(title="回售年限-税前回售收益率",tooltips=TOOLTIPS,**options)
-p3.circle('back_to_sell_years', "income_tosell_before_taxes", color={'field': 'credit', 'transform': color_mapper}, size=12, alpha=0.6,source=source)
+p3.circle('back_to_sell_years', "income_tosell_before_taxes", color={'field': 'credit', 'transform': color_mapper}, size=12, alpha=0.6,source=source,line_width=4,fill_color="white")
 p3.add_layout(color_bar, 'right')
-# labels = LabelSet(x='back_to_sell_years', y='income_tosell_before_taxes', text='bond_name', level='glyph',
-#                   x_offset=10, y_offset=0, source=source, render_mode='canvas')
-# p3.add_layout(labels)
+labels = LabelSet(x='back_to_sell_years', y='income_tosell_before_taxes', text='bond_name', level='glyph',
+                  x_offset=10, y_offset=0, source=source, render_mode='canvas')
+p3.add_layout(labels)
+
+
 
 center1 = BoxAnnotation(left=0, right=365, fill_alpha=0.1, fill_color='navy')
 p3.add_layout(center1)
@@ -166,11 +145,5 @@ p3.add_layout(center3)
 center4 = BoxAnnotation(top=0, fill_alpha=0.1, fill_color='black')
 p3.add_layout(center4)
 
-# 转股价值与价值溢价
-# p4 = figure(title="转股价值-价值溢价",tooltips=TOOLTIPS,**options)
-# p4.circle("to_stock_value", "value_premium", color={'field': 'credit', 'transform': color_mapper}, size=10, alpha=0.6,source=source)
-# p4.add_layout(color_bar, 'right')
 
-p = gridplot([[p1,p2], [p3,None]], toolbar_location="right")
-# p.add_layout(color_bar, 'right')
-show(p)
+show(p3)
