@@ -54,8 +54,10 @@ class Spiders():
     def crawl_storage(self):
         path = setting.DATA_PATH
         file_name = os.listdir(path)[-1][:-4]
+        print(os.listdir(path))
         file_stamp = pd.to_datetime(file_name)
         stamp = pd.datetime.now()
+        print(file_stamp.month,file_stamp.day,stamp.month,stamp.day)
         if file_stamp.month == stamp.month and file_stamp.day == stamp.day:
             pass
         else:
