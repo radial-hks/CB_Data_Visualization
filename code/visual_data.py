@@ -28,7 +28,6 @@ path = setting.DATA_PATH
 file = os.listdir(path)[-1]
 data = pd.read_csv(path + str(file)) 
 # 截取数据
-
 # 选取需要展示的数据字段
 old_columns = [
     '转债名称',
@@ -99,7 +98,6 @@ def percent_(x):
 # 截取数据
 df =  data[old_columns]
 
-
 # 数据转化
 df.loc[:,'转债名称'] = df['转债名称'].apply(lambda x:x[:2])
 df.loc[:,'转股溢价率'] = df['转股溢价率'].apply(percent_)
@@ -108,6 +106,7 @@ df.loc[:,"回售年限"] = df["回售年限"].apply(to_days)
 df.loc[:,"税前回售收益"] = df["税前回售收益"].apply(percent_)
 df.loc[:,'信用'] = df['信用'].apply(credit)
 
+# 更换columns
 df.columns = new_columns
 
 
