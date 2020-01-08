@@ -54,7 +54,7 @@ class Spiders():
     def crawl_storage(self):
         path = setting.DATA_PATH
         file_name = os.listdir(path)[-1][:-4]
-        print(os.listdir(path))
+        # print(os.listdir(path))
         file_stamp = pd.to_datetime(file_name)
         stamp = pd.datetime.now()
         print(file_stamp.month,file_stamp.day,stamp.month,stamp.day)
@@ -63,7 +63,6 @@ class Spiders():
         else:
             data = self.parse_html()
             self.storage_data(data)
-
 
 
 # 初始化类
