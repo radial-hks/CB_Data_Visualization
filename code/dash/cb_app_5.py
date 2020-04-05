@@ -381,5 +381,5 @@ def update_output(submit_n_clicks):
     """.format(submit_n_clicks)
 
 if __name__ == '__main__':
-    # app.run_server(port=5000,host="0.0.0.0")
-    app.run_server(debug=True)
+    app.run_server(port=5000,host="0.0.0.0")
+    # app.run_server(debug=True)

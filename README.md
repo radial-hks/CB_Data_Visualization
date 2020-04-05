@@ -12,9 +12,13 @@
 
 ```python
 # 切换到工作路径后执行代码
-python visual_data.py
+python cb_app_5.py
+
+# 或直接访问: http://120.79.44.169:5000
 ```
-**注意：运行环境准备`requests`,`pandas`及`bokeh`等第三方库**
+**注意：运行环境准备`requests`,`pandas`,`plotly`及`dash`等第三方库**
+
+
 
 
 ## 一、数据收集
@@ -41,15 +45,37 @@ python visual_data.py
 
 *此阶段将会是最挑战及趣味性的阶段,可视化,来啦*
 
+### 1、版本一(方案已弃用)
+
 [Bokeh : 绘制可交互的图形 ](https://bokeh.pydata.org/en/latest/)
 
 [Bokeh 教程](https://nbviewer.jupyter.org/github/gafeng/bokeh-notebooks/tree/master/tutorial/)
 
 ![](https://nbviewer.jupyter.org/github/bokeh/bokeh-notebooks/blob/master/images/bokeh-header.png)
 
-**结果展示**
+**效果展示**
+
+```python
+# 切换到工作路径后执行代码
+python visual_data.py
+```
+**注意：运行环境准备`requests`,`pandas`及`bokeh`等第三方库**
 
 ![结果展示](https://i.loli.net/2019/11/30/RXsPxSdhCirk3D8.png)
+
+
+### 2、版本二
+
+[plotly + dash : 图形绘制及展示](https://plotly.com/)
+
+[plotly 基础入门](https://plotly.com/python/)
+
+[dash 基础入门](https://dash.plotly.com/)
+
+![](https://imgkr.cn-bj.ufileos.com/2d250562-9103-4702-ab7c-ecd504a412b0.jpeg)
+
+**效果展示**
+![](https://imgkr.cn-bj.ufileos.com/7cfe751a-4de2-471d-b639-e192e6fb58b5.png)
 
 
 ## 四、大佬带带我
@@ -59,7 +85,33 @@ python visual_data.py
 * 最后，还要说一句:大佬，带带我！！！
 
 
+## 五、推荐阅读与观看
+
+#### 网站推荐(理论知识直接搜贴)
+
+[集思录](https://www.jisilu.cn/data/cbnew/#cb)
+[富投网](http://www.richvest.com/)
+[雪球](https://xueqiu.com/u/6076237902)
+
+#### 视频推荐
+
+[糖一呀](https://space.bilibili.com/260360?spm_id_from=333.788.b_765f7570696e666f.2)
+[小破站直接搜索可转债](https://www.bilibili.com/)
+
+#### 书籍推荐(书籍购买待研究...)
+[阿秋新书]()
+
+## 六、迭代方向
+
+* 数据源更换 --> 富投网 - 集思录
+* 页面布局 (不太会前端,学习中)
+* 图表之间的联动交互
+* ...
+
 **程序的功能将进一步完善,敬请期待**
+
+## 
+
 
 **或者,有需求、想法,直接聊 ...**
 
