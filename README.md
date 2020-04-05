@@ -99,7 +99,7 @@ python visual_data.py
 [小破站直接搜索可转债](https://www.bilibili.com/)
 
 #### 书籍推荐(书籍购买待研究...)
-[阿秋新书]()
+[阿秋新书](https://item.jd.com/12826462.html)
 
 ## 六、迭代方向
 
