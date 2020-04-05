@@ -1,0 +1,147 @@
+body{
+    text-align: center;
+    background-image: url(https://imgkr.cn-bj.ufileos.com/d25c5b26-65a5-4a94-9e60-8d1f7351f7bd.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#zero{
+    width:50%;
+    height:45%;
+    float:left;
+    /* 边框 */
+    /* border-width:1px;
+    border-color:red;
+    border-style:solid; */
+    /* 设置图形之间的间距 */
+    padding: 0px 0px;
+}
+#one{
+    width:50%;
+    height:45%;
+    float:left;
+    /* 边框 */
+    /* border-width:1px;
+    border-color:red;
+    border-style:solid; */
+    /* 设置图形之间的间距 */
+    padding: 0px 0px;
+    /* box-shadow: 10px 10px 5px #888888; */
+}
+#two{
+    width:50%;
+    height:45%;
+    float:right;
+    /* 边框 */
+    /* border-width:5px;
+    border-color:red;
+    border-style:solid; */
+    /* 设置图形之间的间距 */
+    padding: 0px 0px;
+    /* box-shadow: 10px 10px 5px #888888; */
+}
+#three{
+    width:50%;
+    height:45%;
+    float:left;
+    /* background-color:red; */
+    /* 边框 */
+    /* border-width:5px;
+    border-color:red;
+    border-style:solid; */
+    /* 设置图形之间的间距 */
+    padding: 0px 0px;
+    /* box-shadow: 10px 10px 5px #888888; */
+}
+#four{
+    width:50%;
+    height:45%;
+    float:left;
+    /* background-color:red; */
+    /* 边框 */
+    /* border-width:5px;
+    border-color:red;
+    border-style:solid; */
+    /* 设置图形之间的间距 */
+    padding: 5px 0px;
+    /* box-shadow: 10px 10px 5px #888888; */
+}
+
+
+/* 表格数据显示区域 */
+#five{
+    width:100%;
+    height:auto;
+    float:left;
+    /* background-color:red; */
+    /* 边框 */
+    /* border-width:5px;
+    border-color:red;
+    border-style:solid; */
+    /* 设置图形之间的间距 */
+    padding: 5px 0px;
+    /* box-shadow: 10px 10px 5px #888888; */
+}
+
+#table{
+    width:90%;
+    margin-left: 5%;
+}
+
+
+#fund_data{
+    width:100%;
+    padding: 5px 40px;
+}
+
+/* 基金设置表格样式 */
+
+table {
+    table-layout: auto;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+th {
+    text-align: center;
+    background: #d9edf7;
+    border: 1px solid black;
+}
+td {
+    border: 1px solid black;
+    text-align: center;
+    color:white;
+}
+
+
+/* 相对移动 */
+#danger-danger-provider{
+    padding: 50px 0px  20px  0px;
+}
+#output-provider{
+    padding: 20px 0px;
+    color:white;
+}
+
+#text{
+    width:75%;
+    display: block;
+    padding: 10px 0px;
+    margin-left: 15%;
+}
+
+h3{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+}
+
+h4{
+    text-align: left;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-size: 15px;
+    color:white;
+    position: relative;
+    left:15%;
+}

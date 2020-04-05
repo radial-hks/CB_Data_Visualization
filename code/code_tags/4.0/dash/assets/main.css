@@ -1,0 +1,98 @@
+body{
+    text-align: center;
+    background-image: url(https://imgkr.cn-bj.ufileos.com/e5d17b43-006a-4086-842b-61c006b4fee1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#zero{
+    width:50%;
+    height:45%;
+    float:left;
+    /* 边框 */
+    /* border-width:5px;
+    border-color:red;
+    border-style:solid; */
+    /* 设置图形之间的间距 */
+    padding: 10px 0px;
+}
+#one{
+    width:50%;
+    height:45%;
+    float:left;
+    /* 边框 */
+    /* border-width:5px;
+    border-color:red;
+    border-style:solid; */
+    /* 设置图形之间的间距 */
+    padding: 10px 0px;
+    /* box-shadow: 10px 10px 5px #888888; */
+}
+#two{
+    width:50%;
+    height:45%;
+    float:right;
+    /* 边框 */
+    /* border-width:5px;
+    border-color:red;
+    border-style:solid; */
+    /* 设置图形之间的间距 */
+    padding: 10px 0px;
+    /* box-shadow: 10px 10px 5px #888888; */
+}
+#three{
+    width:50%;
+    height:45%;
+    float:left;
+    /* background-color:red; */
+    /* 边框 */
+    /* border-width:5px;
+    border-color:red;
+    border-style:solid; */
+    /* 设置图形之间的间距 */
+    padding: 10px 0px;
+    /* box-shadow: 10px 10px 5px #888888; */
+}
+#four{
+    width:50%;
+    height:45%;
+    float:left;
+    /* background-color:red; */
+    /* 边框 */
+    /* border-width:5px;
+    border-color:red;
+    border-style:solid; */
+    /* 设置图形之间的间距 */
+    padding: 10px 0px;
+    /* box-shadow: 10px 10px 5px #888888; */
+}
+
+#fund_data{
+    width:100%;
+    padding: 10px 40px;
+}
+
+/* 设置表格样式 */
+
+table {
+    table-layout: auto;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+th {
+    text-align: center;
+    background: #d9edf7;
+    border: 1px solid black;
+}
+td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+
+/* 相对移动 */
+#danger-danger-provider{
+    padding: 100px 0px;
+}
